@@ -1,0 +1,37 @@
+{
+  "name": "storeproject",
+  "private": true,
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . && prettier -w .",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "pre-commit": "tsc && npm run lint"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "recoil": "^0.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.0.10",
+    "prettier": "^3.2.5",
+    "sass": "^1.70.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}
