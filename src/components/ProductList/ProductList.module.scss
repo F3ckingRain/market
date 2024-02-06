@@ -1,17 +1,14 @@
-@import "@/styles/mixins";
+@import '@/styles/mixins';
 
 .list {
-
 }
 
 @include mobileWidth {
   .list {
-
   }
 }
 
 @include desktopWidth {
   .list {
-
   }
 }
