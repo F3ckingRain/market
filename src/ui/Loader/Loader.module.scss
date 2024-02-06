@@ -1,0 +1,25 @@
+@import "@/styles/mixins";
+
+.container {
+
+}
+
+.loader {
+
+}
+
+.text {
+
+}
+
+@include mobileWidth {
+  .loader {
+
+  }
+}
+
+@include desktopWidth {
+  .loader {
+
+  }
+}
