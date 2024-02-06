@@ -2,15 +2,16 @@
   "name": "storeproject",
   "private": true,
   "license": "MIT",
+  "author": "F3ckingRain",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . && prettier -w .",
+    "lint": "eslint --fix . && prettier -w .",
     "preview": "vite preview",
     "prepare": "husky",
-    "pre-commit": "tsc && npm run lint"
+    "pre-commit": "tsc && yarn run lint"
   },
   "dependencies": {
     "react": "^18.2.0",

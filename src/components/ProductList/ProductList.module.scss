@@ -1,0 +1,17 @@
+@import "@/styles/mixins";
+
+.list {
+
+}
+
+@include mobileWidth {
+  .list {
+
+  }
+}
+
+@include desktopWidth {
+  .list {
+
+  }
+}

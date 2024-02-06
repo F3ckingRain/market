@@ -7,10 +7,7 @@
     "jest": true,
     "node": true
   },
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,7 +16,14 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react-refresh", "react-hooks", "prettier", "react", "@typescript-eslint", "import"],
+  "plugins": [
+    "react-refresh",
+    "react-hooks",
+    "prettier",
+    "react",
+    "@typescript-eslint",
+    "import"
+  ],
   "rules": {
     "no-shadow": "off",
     "no-alert": "error",

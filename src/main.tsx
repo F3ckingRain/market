@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import App from './app/App';
 
 import ProviderWrapper from '@/providers/ProviderWrapper';
+import './main.scss';
 
 const isProd = import.meta.env.PROD;
 
