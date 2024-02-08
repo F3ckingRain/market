@@ -36,6 +36,10 @@ export default defineConfig({
             extType = 'img';
           }
 
+          if (/ttf|woff|woff2/i.test(extType)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+
           if (/svg/i.test(extType)) extType = 'icon';
 
           if (/css/i.test(extType)) {
@@ -58,11 +62,16 @@ export default defineConfig({
     },
   },
 
-  esbuild: {},
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+    target: 'esnext',
+  },
 
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
+      $fonts: resolve(__dirname, 'src', 'assets/fonts'),
     },
   },
 });

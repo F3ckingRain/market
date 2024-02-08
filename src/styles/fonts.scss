@@ -1,0 +1,8 @@
+$main-font-url: "$fonts/Protest_Revolution/ProtestRevolution-Regular.ttf";
+
+@font-face {
+  font-family: "ProtestRevolution";
+  src:
+          local("ProtestRevolution"),
+          url($main-font-url) format('truetype');
+}
