@@ -40,9 +40,6 @@ export default defineConfig({
 
           if (/css/i.test(extType)) {
             if (assetInfo.name.includes('index')) {
-              if ((assetInfo.source as string).includes('LinkCreator'))
-                return `assets/${extType}/ui[extname]`;
-
               return `assets/${extType}/main[extname]`;
             }
 

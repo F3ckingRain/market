@@ -1,0 +1,20 @@
+@import "@/styles/mixins";
+
+.header {
+  width: 100%;
+  max-width: 1440px;
+
+  box-sizing: border-box;
+}
+
+@include mobileWidth {
+  .header {
+    padding: 0 20px;
+  }
+}
+
+@include desktopWidth {
+  .header {
+    padding: 0 100px;
+  }
+}
