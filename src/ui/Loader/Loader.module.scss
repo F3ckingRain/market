@@ -17,6 +17,14 @@
   backdrop-filter: blur(3px);
 
   z-index: 9999;
+
+  &__light {
+    background-color: $main-light-background;
+  }
+
+  &__dark {
+    background-color: $main-dark-background;
+  }
 }
 
 .loader {
