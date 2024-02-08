@@ -1,0 +1,24 @@
+@import "@/styles/mixins";
+
+.button {
+
+  &__light {
+
+  }
+
+  &__dark {
+
+  }
+}
+
+@include mobileWidth {
+  .button {
+
+  }
+}
+
+@include desktopWidth {
+  .button {
+
+  }
+}

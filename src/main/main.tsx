@@ -2,7 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 
-import App from './app/App';
+import App from '../app/App';
 
 import ProviderWrapper from '@/providers/ProviderWrapper/ProviderWrapper';
 import './main.scss';

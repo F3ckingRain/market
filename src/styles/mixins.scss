@@ -8,7 +8,7 @@
 }
 
 @mixin desktopWidth {
-  @media (min-width: $mobile-width + 0.2px) and (max-width: $desktop-width) {
+  @media (min-width: $mobile-width + 0.2px) {
     @content;
   }
 }
