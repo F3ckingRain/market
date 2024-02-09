@@ -1,4 +1,4 @@
-import { ThemeType } from '@/store/recoil/themeState';
+import { ThemeType } from 'src/store/recoil/configState';
 
 type DefaultSvgProps = {
   fillColor: string;

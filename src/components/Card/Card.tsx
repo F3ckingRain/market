@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import styles from './Card.module.scss';
 
 import { useNavigateWithUtm } from '@/hooks/useNavigateWithUtm';
-import useThemeState from '@/store/recoil/themeState/themeState';
+import useThemeState from '@/store/recoil/configState/configState';
 import Favorite from '@/svg/Favorite';
 import { CardItemType } from '@/types/card';
 import { getPriceTitle } from '@/utils/numerals';
@@ -27,7 +27,7 @@ function Card({
 }: CardProps) {
   const navigate = useNavigateWithUtm();
 
-  const [theme] = useThemeState();
+  const [{ theme }] = useThemeState();
 
   const navigateHandler = useCallback(() => {
     navigate(`product/id=${id}`);

@@ -1,0 +1,4 @@
+const MOBILE_WIDTH = 991.8;
+const DESKTOP_WIDTH = 1440;
+
+export { MOBILE_WIDTH, DESKTOP_WIDTH };

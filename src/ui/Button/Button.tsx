@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, FC, memo, ReactNode } from 'react';
 
 import styles from './Button.module.scss';
 
-import useThemeState from '@/store/recoil/themeState/themeState';
+import useThemeState from '@/store/recoil/configState/configState';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<ButtonProps> = memo(({ children, additionalClassName, ...props }) => {
-  const [theme] = useThemeState();
+  const [{ theme }] = useThemeState();
 
   return (
     <button

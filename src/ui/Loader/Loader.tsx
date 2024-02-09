@@ -3,7 +3,7 @@ import React, { FC, memo, useEffect, useState } from 'react';
 import styles from './Loader.module.scss';
 
 import LoaderModel from '@/models/LoaderModel/LoaderModel';
-import useThemeState from '@/store/recoil/themeState/themeState';
+import useThemeState from '@/store/recoil/configState/configState';
 
 interface LoaderProps {
   text: string;
@@ -12,7 +12,7 @@ interface LoaderProps {
 
 export const Preloader: FC<LoaderProps> = memo(({ text, active }) => {
   const [dots, setDots] = useState<string>('');
-  const [theme] = useThemeState();
+  const [{ theme }] = useThemeState();
 
   useEffect(() => {
     const interval = setInterval(() => {
