@@ -1,0 +1,33 @@
+@import "@/styles/mixins";
+
+.card {
+  padding: 20px;
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+
+  &__light {
+    background-color: $main-light-card-background;
+  }
+
+  &__dark {
+    background-color: $main-dark-card-background;
+  }
+}
+
+@include mobileWidth {
+  .card {
+
+  }
+}
+
+@include desktopWidth {
+  .card {
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 4px #e0ffff;
+    }
+  }
+}

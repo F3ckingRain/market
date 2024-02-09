@@ -1,0 +1,33 @@
+@import "@/styles/mixins";
+
+.cardContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+
+  }
+
+  &__subtitle {
+
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@include mobileWidth {
+  .cardContainer {
+
+  }
+}
+
+@include desktopWidth {
+  .cardContainer {
+
+  }
+}
