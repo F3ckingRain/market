@@ -12,7 +12,7 @@ interface CardContainerProps {
   subtitle?: string;
 }
 function CardContainer({ title, cards, subtitle }: CardContainerProps) {
-  const { checkIsFavorite } = CartModel();
+  const { checkIsFavorite, setFavorite } = CartModel();
 
   return (
     <div className={styles.cardContainer}>
@@ -24,6 +24,7 @@ function CardContainer({ title, cards, subtitle }: CardContainerProps) {
           <Card
             {...el}
             isFavorite={checkIsFavorite(el.id)}
+            setIsFavorite={setFavorite}
             key={`${el.id}_${index + 1}`}
           />
         ))}

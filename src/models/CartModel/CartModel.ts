@@ -19,16 +19,24 @@ const CartModel = () => {
     [state],
   );
 
-  const addFavorite = useCallback((id: number) => {
-    setState(s => ({ ...s, favorite: [id, ...s.favorite] }));
-  }, []);
+  const setFavorite = useCallback(
+    (id: number) => {
+      setState(s => ({
+        ...s,
+        favorite: checkIsFavorite(id)
+          ? [...s.favorite].filter(el => el !== id)
+          : [id, ...s.favorite],
+      }));
+    },
+    [checkIsFavorite],
+  );
 
   const addToCart = useCallback((id: number) => {
     setState(s => ({ ...s, cart: [id, ...s.cart] }));
   }, []);
 
   const result = useMemo(
-    () => ({ cartState: state, checkIsFavorite, checkIsInCart, addFavorite, addToCart }),
+    () => ({ cartState: state, checkIsFavorite, checkIsInCart, setFavorite, addToCart }),
     [state],
   );
 

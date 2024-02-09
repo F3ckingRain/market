@@ -17,17 +17,26 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 @include mobileWidth {
   .cardContainer {
+    gap: 16px;
+  }
 
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 12px;
   }
 }
 
 @include desktopWidth {
   .cardContainer {
+    gap: 24px;
+  }
 
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
   }
 }

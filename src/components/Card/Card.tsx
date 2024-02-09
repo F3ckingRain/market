@@ -4,10 +4,13 @@ import styles from './Card.module.scss';
 
 import { useNavigateWithUtm } from '@/hooks/useNavigateWithUtm';
 import useThemeState from '@/store/recoil/themeState/themeState';
+import Favorite from '@/svg/Favorite';
 import { CardItemType } from '@/types/card';
+import { getPriceTitle } from '@/utils/numerals';
 
 interface CardProps extends CardItemType {
   isFavorite: boolean;
+  setIsFavorite: (id: number) => void;
 }
 
 function Card({
@@ -20,6 +23,7 @@ function Card({
   id,
   delivery,
   isFavorite,
+  setIsFavorite,
 }: CardProps) {
   const navigate = useNavigateWithUtm();
 
@@ -28,6 +32,15 @@ function Card({
   const navigateHandler = useCallback(() => {
     navigate(`product/id=${id}`);
   }, []);
+
+  const addFavoriteHandler = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      setIsFavorite(id);
+    },
+    [setIsFavorite, id],
+  );
 
   return (
     <div
@@ -41,22 +54,26 @@ function Card({
         <div className={styles.content__price}>
           <div className={styles.price}>
             {!!lastPrice ? (
-              <div>
+              <>
                 <h3 className={`${styles.price__title} ${styles.price__hot}`}>
-                  {price} P
+                  {getPriceTitle(price)}
                 </h3>
 
-                <span className={styles.price__lastTitle}>{lastPrice} P</span>
-              </div>
+                <span className={styles.price__lastPrice}>
+                  {getPriceTitle(lastPrice)}
+                </span>
+              </>
             ) : (
-              <h3 className={styles.price__title}>{price} P</h3>
+              <h3 className={styles.price__title}>{getPriceTitle(price)}</h3>
             )}
           </div>
           {!!split && (
             <div className={styles.split}>
-              <span>{`${split.payment} x ${split.count}`}</span>
+              <span
+                className={styles.split__price}
+              >{`${getPriceTitle(split.payment)} x ${split.count}`}</span>
 
-              <p>в сплит</p>
+              <p className={styles.split__description}>в сплит</p>
             </div>
           )}
         </div>
@@ -64,17 +81,15 @@ function Card({
         <span className={styles.content__name}>{title}</span>
 
         <div className={styles.content__delivery}>
-          {inStock && <p>сейчас</p>} <p>{delivery.default}</p> <p>{delivery.fast}</p>
+          {inStock && <p className={styles.delivery__now}>сейчас</p>}{' '}
+          <p className={styles.delivery__default}>{delivery.default} дней</p>{' '}
+          <p className={styles.delivery__fast}>{delivery.fast} дней</p>
         </div>
       </div>
 
-      <button
-        className={
-          isFavorite
-            ? `${styles.btnFavorite} ${styles.btnFavorite__active}`
-            : styles.btnFavorite
-        }
-      />
+      <button className={styles.btnFavorite} onClick={addFavoriteHandler} type={'button'}>
+        <Favorite favorite={isFavorite} />
+      </button>
     </div>
   );
 }

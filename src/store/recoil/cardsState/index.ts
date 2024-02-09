@@ -14,6 +14,17 @@ const fullCardsList: CardItemType[] = [
     rating: 9199,
     delivery: { default: 25, fast: 10 },
   },
+
+  {
+    id: 2,
+    price: 10000,
+    split: { payment: 5000, count: 2 },
+    title: 'Asics',
+    image: '',
+    inStock: true,
+    rating: 222,
+    delivery: { default: 5, fast: 2 },
+  },
 ];
 
 const initialCardsState: { [key in Categories]: CardItemType[] } = {
