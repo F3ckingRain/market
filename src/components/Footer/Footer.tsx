@@ -36,12 +36,12 @@ function Footer() {
                 </ul>
               </Collapse>
             ) : (
-              <div key={`${el.title}_${index + 1}`}>
+              <div className={styles.column} key={`${el.title}_${index + 1}`}>
                 <h3>{el.title}</h3>
 
                 <ul className={styles.links}>
                   {el.links.map((link, i) => (
-                    <li key={`${link.link}_${i + 1}`}>
+                    <li className={styles.link} key={`${link.link}_${i + 1}`}>
                       <button>{link.path}</button>
                     </li>
                   ))}
