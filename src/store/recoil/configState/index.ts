@@ -10,7 +10,7 @@ type ConfigStateType = {
 
 const initialConfigState: ConfigStateType = {
   theme: (localStorage.getItem('theme') as ThemeType) || 'light',
-  viewport: getViewPortByWidth(document.body.clientHeight),
+  viewport: getViewPortByWidth(document.body.clientWidth),
 };
 
 export { initialConfigState, ThemeType, ViewportType };

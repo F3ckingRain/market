@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import styles from './Footer.module.scss';
 
 import { footerLinks } from '@/components/Footer/index';
@@ -30,7 +32,7 @@ function Footer() {
                 <ul className={styles.links}>
                   {el.links.map((link, i) => (
                     <li key={`${link.link}_${i + 1}`}>
-                      <button>{link.path}</button>
+                      <NavLink to={link.link}>{link.path}</NavLink>
                     </li>
                   ))}
                 </ul>
@@ -42,7 +44,16 @@ function Footer() {
                 <ul className={styles.links}>
                   {el.links.map((link, i) => (
                     <li className={styles.link} key={`${link.link}_${i + 1}`}>
-                      <button>{link.path}</button>
+                      <NavLink
+                        to={link.link}
+                        className={({ isActive }) =>
+                          isActive
+                            ? `${styles.link__nav} ${styles.link__active}`
+                            : styles.link__nav
+                        }
+                      >
+                        {link.path}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

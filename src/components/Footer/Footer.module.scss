@@ -87,7 +87,7 @@
 
   transition: all .2s ease-in-out;
 
-  >button {
+  &__nav {
     margin: 0;
     padding: 0;
 
@@ -98,8 +98,13 @@
 
     font-size: 14px;
     color: inherit;
+    text-decoration: unset;
 
     cursor: pointer;
+  }
+
+  &__active {
+    color: #389d9f;
   }
 }
 

@@ -24,7 +24,7 @@ const Collapse: FC<CollapseProps> = memo(({ title, children }) => {
         {children}
       </div>
 
-      <button className={open ? `${styles.arrow} ${styles.arrow__open}` : styles.arrow} />
+      <span className={open ? `${styles.arrow} ${styles.arrow__open}` : styles.arrow} />
     </button>
   );
 });
