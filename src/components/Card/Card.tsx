@@ -8,7 +8,7 @@ import Favorite from '@/svg/Favorite';
 import { CardItemType } from '@/types/card';
 import { getPriceTitle } from '@/utils/numerals';
 
-interface CardProps extends CardItemType {
+export interface CardProps extends CardItemType {
   isFavorite: boolean;
   setIsFavorite: (id: number) => void;
 }

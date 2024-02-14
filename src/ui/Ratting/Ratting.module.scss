@@ -1,0 +1,30 @@
+@import "@/styles/mixins";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.star {
+  width: 20px;
+  aspect-ratio: 1;
+
+  border: none;
+  outline: none;
+
+  background-color: red;
+}
+
+@include mobileWidth {
+  .container {
+
+  }
+};
+
+@include desktopWidth {
+  .container {
+
+  }
+}

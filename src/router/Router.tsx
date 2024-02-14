@@ -17,12 +17,13 @@ const routes: RouteObject[] = [
         path: '',
         element: <HomePage />,
       },
+
+      {
+        path: 'product',
+        element: <ProductLayout />,
+        children: [{ path: '*', element: <ProductPage /> }],
+      },
     ],
-  },
-  {
-    path: '/product',
-    element: <ProductLayout />,
-    children: [{ path: '*', element: <ProductPage /> }],
   },
 ];
 

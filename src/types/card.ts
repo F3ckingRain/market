@@ -1,14 +1,20 @@
+type CategoryType = {
+  title: string;
+  path: string;
+};
+
 type CardItemType = {
   id: number;
   title: string;
   image: string;
   price: number;
   inStock: boolean;
-  rating: number;
+  ratting: number;
   delivery: {
     default: number;
     fast?: number;
   };
+  categories: CategoryType[];
   lastPrice?: number;
   split?: {
     payment: number;
@@ -16,4 +22,4 @@ type CardItemType = {
   };
 };
 
-export { CardItemType };
+export { CardItemType, CategoryType };

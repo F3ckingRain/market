@@ -11,8 +11,12 @@ const fullCardsList: CardItemType[] = [
     title: 'Nike',
     image: '',
     inStock: true,
-    rating: 9199,
+    ratting: 9199,
     delivery: { default: 25, fast: 10 },
+    categories: [
+      { title: 'Обувь для спорта', path: 'shoes/sport' },
+      { title: 'Тренировочные', path: 'shoes/training' },
+    ],
   },
 
   {
@@ -22,13 +26,17 @@ const fullCardsList: CardItemType[] = [
     title: 'Asics',
     image: '',
     inStock: true,
-    rating: 222,
+    ratting: 222,
     delivery: { default: 5, fast: 2 },
+    categories: [
+      { title: 'Обувь для спорта', path: 'shoes/sport' },
+      { title: 'Тренировочные', path: 'shoes/training' },
+    ],
   },
 ];
 
 const initialCardsState: { [key in Categories]: CardItemType[] } = {
-  mostPopular: fullCardsList.filter(el => el.rating >= 7000),
+  mostPopular: fullCardsList.filter(el => el.ratting >= 7000),
   getToday: fullCardsList.filter(el => el.inStock),
 };
 

@@ -2,18 +2,21 @@ import React from 'react';
 
 import { useOutletContext } from 'react-router-dom';
 
-import { useNavigateWithUtm } from '@/hooks/useNavigateWithUtm';
+import CardOpen from '@/components/CardOpen/CardOpen';
+import Wrapper from '@/containers/Wrapper/Wrapper';
 import { CardItemType } from '@/types/card';
 
 function ProductPage() {
-  const navigate = useNavigateWithUtm();
-
   const params = useOutletContext<CardItemType>();
-  console.log(params);
+
   return (
-    <div>
-      <button onClick={() => navigate('/')}>BACK</button>
-    </div>
+    <>
+      <Wrapper>
+        <CardOpen {...params} />
+      </Wrapper>
+
+      <Wrapper>similar</Wrapper>
+    </>
   );
 }
 
