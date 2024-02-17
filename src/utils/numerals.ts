@@ -9,10 +9,11 @@ const getPriceTitle = (val: number): string => {
 };
 
 const calculateRatting = (ratting: number, maxRatting: number, index: number): number => {
-  const prev = index >= 1 ? ratting / ((maxRatting / 10) * index - 1) : 0;
-  const now = index > 1 && prev <= 1 ? 0 : ratting / ((maxRatting / 10) * index);
+  const relativeRatting = ratting / maxRatting;
 
-  const result = now >= 1 ? 1 : now.toFixed(3);
+  const calc = relativeRatting * 10 - index + 1;
+
+  const result = calc > 1 ? 100 : calc * 100;
 
   return Number(result);
 };

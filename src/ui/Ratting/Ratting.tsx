@@ -3,6 +3,7 @@ import React, { FC, memo } from 'react';
 import styles from './Ratting.module.scss';
 
 import { MAX_RATTING } from '@/constants/ratting';
+import Star from '@/svg/Star';
 import { calculateRatting } from '@/utils/numerals';
 
 interface RattingProps {
@@ -24,7 +25,9 @@ const Ratting: FC<RattingProps> = memo(({ ratting, maxRatting = MAX_RATTING }) =
   return (
     <div className={styles.container}>
       {stars.map((s, i) => (
-        <button className={styles.star} key={`${s.id}_${i + 1}`} />
+        <button className={styles.star} key={`${s.id}_${i + 1}`}>
+          <Star fill={s.fill} id={s.id} />
+        </button>
       ))}
     </div>
   );
