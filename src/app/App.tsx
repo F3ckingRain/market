@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import styles from './App.module.scss';
-
+import Input from '@/components/Input/Input';
 import { useViewportWatcher } from '@/hooks/useViewportWatcher';
+import AuthModel from '@/models/AuthModel/AuthModel';
 import Router from '@/router/Router';
-import useThemeState from '@/store/recoil/configState/configState';
+import Button from '@/ui/Button/Button';
 import Loader from '@/ui/Loader/Loader';
 
 function App() {
-  const [{ theme }] = useThemeState();
+  const [value, setValue] = useState<string>('');
+  const { openAuthModal } = AuthModel();
 
   useViewportWatcher();
 
   return (
-    <main className={`${styles.app} ${styles[`app__${theme}`]}`}>
+    <>
+      <div>
+        <Input value={value} onChange={setValue} />
+
+        <Button onClick={openAuthModal} type={'button'}>
+          AUTH
+        </Button>
+      </div>
+
       <Router />
 
       <Loader />
-    </main>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 @import "@/styles/mixins";
 
-.app {
+.main {
   width: 100%;
   min-height: 100dvh;
 
@@ -19,13 +19,13 @@
 }
 
 @include mobileWidth {
-  .app {
+  .main {
     gap: 20px;
   }
 }
 
 @include desktopWidth {
-  .app {
+  .main {
     gap: 32px;
   }
 }

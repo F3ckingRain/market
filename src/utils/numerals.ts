@@ -13,7 +13,7 @@ const calculateRatting = (ratting: number, maxRatting: number, index: number): n
 
   const calc = relativeRatting * 10 - index + 1;
 
-  const result = calc > 1 ? 100 : calc * 100;
+  const result = calc > 0 ? (calc > 1 ? 100 : calc * 100) : 0;
 
   return Number(result);
 };
