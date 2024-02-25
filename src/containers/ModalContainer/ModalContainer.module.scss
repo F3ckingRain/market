@@ -18,19 +18,18 @@
 
   border: none;
   box-sizing: border-box;
+}
+
+.modal {
+  width: 100%;
 
   opacity: 0;
 
   transition: opacity 500ms ease-in-out;
 
-  &__open {
+  &__mounted {
     opacity: 1;
-
   }
-}
-
-.modal {
-  width: 100%;
 }
 
 @include mobileWidth {

@@ -16,14 +16,9 @@ function ModalContainer({ opened, onClose, children }: ModalContainerProps) {
   if (!mounted) return null;
 
   return (
-    <dialog
-      className={
-        opened ? `${styles.container} ${styles.container__open}` : styles.container
-      }
-      onClick={onClose}
-    >
+    <dialog className={styles.container} onClick={onClose}>
       <div
-        className={styles.modal}
+        className={`${styles.modal} ${opened && styles.modal__mounted}`}
         onClick={event => event.stopPropagation()}
         aria-hidden
       >
